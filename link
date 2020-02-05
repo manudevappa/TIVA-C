@@ -1,2 +1,7 @@
 display library and api for display
 http://www.ti.com/lit/an/spma055/spma055.pdf
+
+gsm with tiva configure
+https://www.electronicwings.com/ti-launchpad/sim900a-gsm-module-interfacing-with-msp-exp430g2-launchpad
+http://mcuhq.com/34/sms-example-using-tiva-c-launchpad-and-sim-808-gsm-module
+http://e2e.ti.com/support/microcontrollers/other/f/908/t/330755
