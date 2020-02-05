@@ -17,7 +17,7 @@
     int stringLength(char*);
     int i;
     int flag = 0;
-    char temptext[];
+    char temptext[100];
     int index = 0;
     int stringLength(char* txt)
     {
@@ -75,18 +75,18 @@ int main(void) {
          while ((UARTCharsAvail(UART0_BASE))&&(flag == 0)){
               uint32_t recd = 0;
               recd = UARTCharGet(UART0_BASE);
-              if(recd==10){
+              if(recd==' '){
                   flag = 1;
                   UARTCharPut(UART0_BASE, '@');
+                  length = stringLength(temptext);
+                  for(i=0;i<=length;i++){
+                  UARTCharPut(UART0_BASE, temptext[i]);
+                  }
+                  flag = 0;
                }
               UARTCharPut(UART0_BASE, recd);
               temptext[index] = recd;
               index++;
-
-               length = stringLength(temptext);
-               for(i=0;i<=length;i++){
-               UARTCharPut(UART0_BASE, str[i]);
-               }
              }
          if(flag==1){
           length = stringLength(str);
@@ -102,8 +102,3 @@ int main(void) {
 //         UARTCharPut(UART0_BASE, str[i]);
 //         }
       }
-
-
-
-
-
